@@ -7,9 +7,9 @@ Labb2 i JavaScript kursen
 
 (X) Skapa Json fil som innehåller alla kort i spelet
 
-() En funktion som shufflar alla korten
+(X) En funktion som shufflar alla korten
 
-() Skriva ut alla kort på sidan
+(X) Skriva ut alla kort på sidan
 
 () Lägga clickevent på samtliga kort så att man kan jämföra värdet
 
