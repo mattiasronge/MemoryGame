@@ -3,9 +3,9 @@ Labb2 i JavaScript kursen
 
 
 ### Att göra:
-() Skapa fil struktur och skapa mappar. 
+(X) Skapa fil struktur och skapa mappar. 
 
-() Skapa Json fil som innehåller alla kort i spelet
+(X) Skapa Json fil som innehåller alla kort i spelet
 
 () En funktion som shufflar alla korten
 
