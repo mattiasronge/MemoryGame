@@ -1,4 +1,35 @@
-.Bild {
-    width: 7rem;
-    height: 10rem;
+body {
+    background: rebeccapurple;
+}
+.imgBox {
+    width: 5rem;
+    height: 8rem;
+    border: 2px solid black;
+    margin: 0.1rem;
+    background: black;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.deck {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hiddenImg {
+    opacity: 0;
+    width: 5rem;
+    height: 8rem;
+}
+
+.shownImg {
+    opacity: 1;
+    width: 5rem;
+    height: 8rem;
+}
+
+.noImg {
+    display: none;
 }
