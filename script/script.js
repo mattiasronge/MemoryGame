@@ -1,18 +1,24 @@
+// Skapar alla globala variabler 
+
 var deck = [];
 var cards = document.getElementsByTagName('img');
 var firstElem = null;
 var firstValue = null;
 
-// Hämtar data ifrån JSON och skriver ut det i en array
+// Hämtar data ifrån JSON och sparar den i mitt tomt array
+// sen användar jag min shuffla funktion för att shuffla den
 
 fetch("../JSON/cards.json").then(response => {
     response.json().then(json => {
         let data = json;
         deck = data;
         shuffla(deck);
-        console.log(deck);
 
 // Loopar igenom array och skriver ut korten 
+
+        //För varje objekt i mitt array så skapar jag html elements (i detta fall: alla kort) 
+        //jag ger dem olika classer och id så att jag kan jämföra dem senare i min kod
+        //sen appendar jag alla elements jag har skapat till min div som ligger i index.html
 
         deck.forEach(function (thisItem, index) {
 
@@ -28,6 +34,10 @@ fetch("../JSON/cards.json").then(response => {
                 stuff.appendChild(imgBox);
 
         })
+
+        //För varje element jag har skapat så använder jag en eventlistener för att lyssna efter 'click'
+        //sen sparar jag värdet av första elementet som har klickats för att jamföra den med nästa click
+        //Beroende på värdet så matchas korten och klasser ändras beroende på det. 
 
         for (var i = 0; i < cards.length; i++) {
 
@@ -53,7 +63,7 @@ fetch("../JSON/cards.json").then(response => {
                     console.log("Card value is:",firstValue);
                  
 
-                } else if (firstValue === target.id) {
+                } else if (firstValue === target.id && firstElem !== target) {
 
                     firstValue = null;
 
@@ -61,10 +71,12 @@ fetch("../JSON/cards.json").then(response => {
 
                     firstElem.classList.add("matchedCard");
                     target.classList.add("matchedCard");
+
                 } 
                 else {
 
                     firstValue = null;
+
                     console.log("Card value is:", target.id);
                     console.log("Cards dont match, turning cards now");
 
@@ -80,11 +92,10 @@ fetch("../JSON/cards.json").then(response => {
                 }
             });
         }
-
     })
 });
 
-
+// Här shufflas alla objekt i min array, så att dem ligger i random position.
 function shuffla (array) {
     for (var a = array.length - 1,b, rand; a > 0; a--){
         rand = Math.floor(Math.random() * (a + 1));
