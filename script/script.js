@@ -1,18 +1,15 @@
 // Skapar alla globala variabler 
+import allCards from "../Cards/allCards.js"
+
 
 var deck = [];
 var cards = document.getElementsByTagName('img');
 var firstElem = null;
 var firstValue = null;
-
 // Hämtar data ifrån JSON och sparar den i mitt tomt array
 // sen användar jag min shuffla funktion för att shuffla den
-
-fetch("../JSON/cards.json").then(response => {
-    response.json().then(json => {
-        let data = json;
-        deck = data;
-        shuffla(deck);
+        deck =allCards
+        shuffla(allCards);
 
 // Loopar igenom array och skriver ut korten 
 
@@ -92,8 +89,7 @@ fetch("../JSON/cards.json").then(response => {
                 }
             });
         }
-    })
-});
+
 
 // Här shufflas alla objekt i min array, så att dem ligger i random position.
 function shuffla (array) {
@@ -103,4 +99,5 @@ function shuffla (array) {
     }
     return array;
 }
+
 
